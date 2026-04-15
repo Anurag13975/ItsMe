@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generate Admin Password Hash</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #07091a;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: #131b35;
+      border: 1px solid rgba(99,102,241,0.35);
+      border-radius: 16px;
+      padding: 40px;
+      width: 100%;
+      max-width: 540px;
+    }
+    h2 { margin: 0 0 8px; font-size: 1.4rem; }
+    p  { color: #94a3b8; font-size: 0.9rem; margin: 0 0 28px; line-height: 1.6; }
+
+    label  { font-size: 0.78rem; font-weight: 600; color: #818cf8; text-transform: uppercase; letter-spacing: .06em; display:block; margin-bottom: 6px; }
+    input  { width: 100%; box-sizing: border-box; padding: 10px 14px; background: #1a2440; border: 1px solid rgba(99,102,241,0.2); border-radius: 8px; color: #f1f5f9; font-size: 0.95rem; margin-bottom: 14px; }
+    input:focus { outline: none; border-color: #6366f1; }
+
+    button {
+      width: 100%; padding: 12px; border-radius: 8px;
+      background: linear-gradient(135deg,#6366f1,#22d3ee);
+      color: #fff; font-size: 0.95rem; font-weight: 700;
+      border: none; cursor: pointer; transition: opacity .2s;
+    }
+    button:hover { opacity: 0.85; }
+
+    .result { margin-top: 24px; display: none; }
+    .result label { margin-bottom: 6px; }
+    .hash-output {
+      background: #0d1226; padding: 12px 14px; border-radius: 8px;
+      font-family: monospace; font-size: 0.82rem; color: #22d3ee;
+      word-break: break-all; border: 1px solid rgba(34,211,238,0.2);
+      margin-bottom: 14px;
+    }
+    .step {
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.25);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: #94a3b8;
+    }
+    .step strong { color: #f1f5f9; }
+    .step code {
+      background: rgba(0,0,0,0.3);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.82rem;
+      color: #22d3ee;
+    }
+    .copy-btn {
+      width: auto; padding: 7px 18px; font-size: 0.82rem; margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <h2>🔐 Set Admin Password</h2>
+  <p>
+    Enter a strong password below to generate its SHA-256 hash.
+    Paste the hash into <code style="color:#22d3ee;font-size:0.85rem">public/admin-config.json</code>
+    to update your admin login.
+  </p>
+
+  <label for="pwd">New Password</label>
+  <input type="password" id="pwd" placeholder="Enter your desired admin password" />
+
+  <label for="pwd2">Confirm Password</label>
+  <input type="password" id="pwd2" placeholder="Re-enter password" />
+
+  <button onclick="generate()">Generate Hash</button>
+
+  <div class="result" id="result">
+    <label>SHA-256 Hash (copy this)</label>
+    <div class="hash-output" id="hash-out"></div>
+    <button class="copy-btn" onclick="copyHash()">📋 Copy Hash</button>
+
+    <div class="step">
+      <strong>Next step:</strong> Open
+      <code>public/admin-config.json</code>,
+      replace the value of <code>"passwordHash"</code> with the hash above,
+      then save the file and re-deploy your site.
+    </div>
+  </div>
+
+  <p id="err" style="color:#ef4444;margin-top:12px;font-size:0.85rem;display:none;margin-bottom:0"></p>
+</div>
+
+<script>
+async function sha256(str) {
+  const enc  = new TextEncoder();
+  const hash = await crypto.subtle.digest('SHA-256', enc.encode(str));
+  return Array.from(new Uint8Array(hash))
+    .map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function generate() {
+  const pwd  = document.getElementById('pwd').value;
+  const pwd2 = document.getElementById('pwd2').value;
+  const err  = document.getElementById('err');
+  err.style.display = 'none';
+
+  if (!pwd) { err.textContent = 'Please enter a password.'; err.style.display = 'block'; return; }
+  if (pwd !== pwd2) { err.textContent = 'Passwords do not match.'; err.style.display = 'block'; return; }
+  if (pwd.length < 8) { err.textContent = 'Use at least 8 characters for security.'; err.style.display = 'block'; return; }
+
+  const hash = await sha256(pwd);
+  document.getElementById('hash-out').textContent = hash;
+  document.getElementById('result').style.display = 'block';
+}
+
+function copyHash() {
+  const h = document.getElementById('hash-out').textContent;
+  navigator.clipboard.writeText(h).then(() => alert('Hash copied to clipboard!'));
+}
+</script>
+</body>
+</html>

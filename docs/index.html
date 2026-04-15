@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anurag Singhal | Portfolio</title>
+  <meta name="description" content="SDE-2 at HT Digital Streams – Java, Spring Boot, Microservices, Real-time Systems" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════ NAVBAR ══════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">AS<span class="logo-dot">.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-trail">
+        <a href="#contact" class="btn btn-sm btn-primary">Hire Me</a>
+        <div id="admin-bar" class="admin-bar hidden">
+          <span class="admin-pill"><i class="fas fa-shield-halved"></i> Admin</span>
+          <button class="btn btn-sm btn-outline" onclick="exportDataJSON()" title="Download updated data.json to deploy">
+            <i class="fas fa-file-export"></i> Export
+          </button>
+          <button class="btn btn-sm btn-ghost" onclick="discardLocalChanges()" title="Discard unsaved edits">
+            <i class="fas fa-rotate-left"></i>
+          </button>
+          <button class="btn btn-sm btn-ghost" onclick="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════ HERO ══════════════════════ -->
+  <section id="hero" class="s-hero">
+    <div class="hero-bg-blob blob-1"></div>
+    <div class="hero-bg-blob blob-2"></div>
+
+    <div class="hero-inner">
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <p  class="hero-greeting reveal" id="hero-greeting">Hi, I'm</p>
+        <h1 class="hero-name   reveal" id="hero-name">Anurag Singhal</h1>
+
+        <div class="hero-role reveal">
+          <span class="role-prefix">I'm a&nbsp;</span>
+          <span id="typewriter" class="typewriter"></span>
+          <span class="typewriter-cursor">|</span>
+        </div>
+
+        <p class="hero-tagline reveal" id="hero-tagline">Building scalable, high-performance systems that power millions of users</p>
+
+        <div class="hero-ctas reveal">
+          <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
+          <a href="#contact"  class="btn btn-outline btn-lg">Get In Touch</a>
+        </div>
+
+        <div class="hero-socials reveal">
+          <a id="hero-github-link"   href="#" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+          <a id="hero-linkedin-link" href="#" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a id="hero-email-link"    href="#"                 class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- Right: Avatar + Stats -->
+      <div class="hero-visual">
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar-core" id="hero-avatar">AS</div>
+        </div>
+
+        <div class="hero-stats" id="hero-stats">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </div>
+
+    <button class="section-edit-btn admin-only hidden" onclick="editSection('hero')" title="Edit Hero">
+      <i class="fas fa-pen"></i>
+    </button>
+  </section>
+
+  <!-- ══════════════════════ ABOUT ══════════════════════ -->
+  <section id="about" class="section s-dark">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-label">Who am I</span>
+        <h2 class="sec-title">About Me</h2>
+      </div>
+      <div id="about-content" class="about-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+    <button class="section-edit-btn admin-only hidden" onclick="editSection('about')" title="Edit About">
+      <i class="fas fa-pen"></i>
+    </button>
+  </section>
+
+  <!-- ══════════════════════ EXPERIENCE ══════════════════════ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-label">Career</span>
+        <h2 class="sec-title">Experience</h2>
+      </div>
+      <div id="experience-content" class="timeline">
+        <!-- Rendered by app.js -->
+      </div>
+      <button class="add-btn admin-only hidden" onclick="addItem('experience')">
+        <i class="fas fa-plus"></i> Add Experience
+      </button>
+
+      <!-- Education sub-section -->
+      <div class="sec-header edu-header reveal">
+        <span class="sec-label">Academic</span>
+        <h2 class="sec-title">Education</h2>
+      </div>
+      <div id="education-content" class="edu-grid">
+        <!-- Rendered by app.js -->
+      </div>
+      <button class="add-btn admin-only hidden" onclick="addItem('education')">
+        <i class="fas fa-plus"></i> Add Education
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ PROJECTS ══════════════════════ -->
+  <section id="projects" class="section s-dark">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-label">Portfolio</span>
+        <h2 class="sec-title">Projects</h2>
+      </div>
+      <div id="projects-content" class="projects-grid">
+        <!-- Rendered by app.js -->
+      </div>
+      <button class="add-btn admin-only hidden" onclick="addItem('projects')">
+        <i class="fas fa-plus"></i> Add Project
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ SKILLS ══════════════════════ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-label">Stack</span>
+        <h2 class="sec-title">Technical Skills</h2>
+      </div>
+      <div id="skills-content" class="skills-wrap">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+    <button class="section-edit-btn admin-only hidden" onclick="editSection('skills')" title="Edit Skills">
+      <i class="fas fa-pen"></i>
+    </button>
+  </section>
+
+  <!-- ══════════════════════ ACHIEVEMENTS ══════════════════════ -->
+  <section id="achievements" class="section s-dark">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-label">Recognition</span>
+        <h2 class="sec-title">Achievements</h2>
+      </div>
+      <div id="achievements-content" class="achievements-grid">
+        <!-- Rendered by app.js -->
+      </div>
+      <button class="add-btn admin-only hidden" onclick="addItem('achievements')">
+        <i class="fas fa-plus"></i> Add Achievement
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ CONTACT ══════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-label">Reach out</span>
+        <h2 class="sec-title">Get In Touch</h2>
+      </div>
+      <div id="contact-content" class="contact-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+    <button class="section-edit-btn admin-only hidden" onclick="editSection('about')" title="Edit Contact Info">
+      <i class="fas fa-pen"></i>
+    </button>
+  </section>
+
+  <!-- ══════════════════════ FOOTER ══════════════════════ -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <p id="footer-copy">© 2025 Anurag Singhal · Crafted with <span class="heart">♥</span></p>
+      <div class="footer-socials">
+        <a id="footer-github"   href="#" target="_blank"><i class="fab fa-github"></i></a>
+        <a id="footer-linkedin" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════ ADMIN: LOGIN MODAL ══════════════════════ -->
+  <div id="login-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <div class="modal-backdrop" onclick="closeLoginModal()"></div>
+    <div class="modal-box login-box">
+      <div class="modal-head">
+        <h3 id="login-title"><i class="fas fa-lock"></i>&ensp;Admin Login</h3>
+        <button class="modal-close" onclick="closeLoginModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label">Password</label>
+        <input type="password" id="admin-pwd" class="form-input" placeholder="Enter admin password"
+               onkeydown="if(event.key==='Enter') adminLogin()" autocomplete="current-password" />
+        <p id="login-error" class="form-error hidden"></p>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-primary btn-full" onclick="adminLogin()">
+          <i class="fas fa-sign-in-alt"></i>&ensp;Login
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════ ADMIN: EDIT MODAL ══════════════════════ -->
+  <div id="edit-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" onclick="closeEditModal()"></div>
+    <div class="modal-box edit-box">
+      <div class="modal-head">
+        <h3 id="edit-modal-title">Edit</h3>
+        <button class="modal-close" onclick="closeEditModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="edit-modal-body">
+        <!-- Dynamically populated -->
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-ghost"   onclick="closeEditModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveChanges()" id="save-btn">
+          <i class="fas fa-save"></i>&ensp;Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════ TOAST ══════════════════════ -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/data-init.js"></script>
+  <script src="js/admin-config-init.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
