@@ -6,34 +6,66 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Anurag Singhal",
-    "titles": ["Software Engineer", "Backend Developer", "Java Specialist", "System Designer"],
+    "titles": [
+      "Software Engineer",
+      "Backend Developer",
+      "Java Specialist",
+      "System Designer"
+    ],
     "tagline": "Building scalable, high-performance systems that power millions of users"
   },
   "about": {
     "bio": "I'm a passionate Software Development Engineer with 2+ years of experience building high-impact backend systems. Currently SDE-2 at HT Digital Streams (Hindustan Times), where I architect real-time data pipelines, microservices, and APIs that serve millions of users daily.",
     "bio2": "I specialise in Java, Spring Boot, and reactive programming, with a track record of improving system performance, reducing latency, and driving revenue growth through technical innovation.",
     "stats": [
-      { "value": "2+",    "label": "Years Exp"       },
-      { "value": "1.5M",  "label": "Daily Users"     },
-      { "value": "1500+", "label": "Problems Solved" }
+      {
+        "value": "2+",
+        "label": "Years Exp"
+      },
+      {
+        "value": "1.5M",
+        "label": "Daily Users"
+      },
+      {
+        "value": "1500+",
+        "label": "Problems Solved"
+      }
     ],
     "contact": {
-      "email":    "anuragsinghal6072@gmail.com",
-      "phone":    "+91-9588877170",
+      "email": "anuragsinghal6072@gmail.com",
+      "phone": "+91-9588877170",
       "linkedin": "https://linkedin.com/in/anurag0singhal",
-      "github":   "https://github.com/Anurag13975",
+      "github": "https://github.com/Anurag13975",
       "location": "New Delhi, India"
     }
   },
   "experience": [
     {
+      "id": 1776251159814,
+      "title": "SDE",
+      "company": "Airte",
+      "period": "Apr 2026 – Present",
+      "location": "",
+      "domain": "",
+      "techStack": [],
+      "bullets": []
+    },
+    {
       "id": 1,
-      "title":    "SDE-2",
-      "company":  "HT Digital Streams (The Hindustan Times)",
-      "period":   "Oct 2025 – Present",
+      "title": "SDE-2",
+      "company": "HT Digital Streams (The Hindustan Times)",
+      "period": "Oct 2025 – Present",
       "location": "New Delhi, India",
-      "domain":   "Markets",
-      "techStack": ["Java", "Spring Boot", "REST", "Microservices", "Spring WebFlux", "Redis", "MongoDB"],
+      "domain": "Markets",
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "REST",
+        "Microservices",
+        "Spring WebFlux",
+        "Redis",
+        "MongoDB"
+      ],
       "bullets": [
         "Built a <strong>Real-Time Trade-Alert Notification</strong> feature with MoEngage integration — scheduler monitors live stock prices against trade recommendations, detects stop-loss/target-hit events, and pushes alerts asynchronously to a message queue. Achieved <strong>40% increase</strong> in overall market traffic.",
         "Enhanced the core <strong>Search API</strong> via migration to Atlas Search (improved relevance and reduced latency) and revamped the Market Dashboard — combined efforts drove a <strong>25% increase</strong> in traffic."
@@ -41,12 +73,21 @@
     },
     {
       "id": 2,
-      "title":    "SDE-1",
-      "company":  "HT Digital Streams (The Hindustan Times)",
-      "period":   "June 2024 – Oct 2025",
+      "title": "SDE-1",
+      "company": "HT Digital Streams (The Hindustan Times)",
+      "period": "Jun 2024 – Oct 2025",
       "location": "New Delhi, India",
-      "domain":   "Vernacular & Livemint.com → Markets",
-      "techStack": ["Java", "Spring Boot", "REST", "Microservices", "Redis", "Elasticsearch", "MongoDB", "Spring WebFlux"],
+      "domain": "Vernacular & Livemint.com → Markets",
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "REST",
+        "Microservices",
+        "Redis",
+        "Elasticsearch",
+        "MongoDB",
+        "Spring WebFlux"
+      ],
       "bullets": [
         "Revamped backend architecture with optimised APIs, Redis caching, and Elasticsearch — achieved <strong>60% higher user engagement</strong> and supported peak <strong>1.5 M daily traffic</strong>.",
         "Led backend integration of <strong>IndiaBond</strong> and <strong>Dhan</strong> into LiveMint, enabling a new financial product vertical that contributed to a <strong>₹1 Cr revenue increase</strong>.",
@@ -59,55 +100,108 @@
     {
       "id": 1,
       "institution": "Malaviya National Institute of Technology Jaipur",
-      "degree":      "Bachelor of Technology",
-      "score":       "8.00 CGPA",
-      "period":      "Nov 2020 – May 2024",
-      "location":    "Jaipur, Rajasthan"
+      "degree": "Bachelor of Technology",
+      "score": "8.00 CGPA",
+      "period": "Nov 2020 – May 2024",
+      "location": "Jaipur, Rajasthan"
     },
     {
       "id": 2,
       "institution": "Nirmal Happy Sr. Sec. School",
-      "degree":      "12th – Rajasthan Board of Secondary Education",
-      "score":       "93.80%",
-      "period":      "July 2019 – July 2020",
-      "location":    "Karauli, Rajasthan"
+      "degree": "12th – Rajasthan Board of Secondary Education",
+      "score": "93.80%",
+      "period": "Jul 2019 – Jul 2020",
+      "location": "Karauli, Rajasthan"
     }
   ],
   "projects": [
     {
       "id": 1,
-      "name":        "eCommerceElite",
+      "name": "eCommerceElite",
       "description": "A full-stack e-commerce platform with responsive React UI, global state via Redux, and 15+ REST APIs in Node/Express for core commerce flows.",
-      "techStack":   ["ReactJS", "NodeJS", "Express.js", "Redux.js", "MongoDB", "JWT", "PayPal API"],
-      "period":      "Jan 2023 – Apr 2023",
+      "techStack": [
+        "ReactJS",
+        "NodeJS",
+        "Express.js",
+        "Redux.js",
+        "MongoDB",
+        "JWT",
+        "PayPal API"
+      ],
+      "period": "Jan 2023 – Apr 2023",
       "highlights": [
         "Responsive React UI with global state management via Redux",
         "15+ REST APIs in Node/Express covering entire commerce flow",
         "JWT-based authentication and PayPal integration for secure checkout"
       ],
       "github": "https://github.com/Anurag13975",
-      "live":   ""
+      "live": ""
     },
     {
       "id": 2,
-      "name":        "Real-Time Market Intelligence Agent",
+      "name": "Real-Time Market Intelligence Agent",
       "description": "A real-time market monitoring prototype with WebSocket streaming, React dashboard, and an ML model for short-term price trend classification.",
-      "techStack":   ["Java", "Spring Boot", "Python", "FastAPI", "React", "WebSockets", "scikit-learn"],
-      "period":      "2024",
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "Python",
+        "FastAPI",
+        "React",
+        "WebSockets",
+        "scikit-learn"
+      ],
+      "period": "2024",
       "highlights": [
         "Real-time market monitoring via WebSockets + React dashboard",
         "ML model (scikit-learn) with SMA/EMA/volatility features for trend classification"
       ],
       "github": "https://github.com/Anurag13975",
-      "live":   ""
+      "live": ""
     }
   ],
   "skills": {
-    "Languages":             ["Java", "Python", "C/C++", "SQL", "JavaScript", "HTML/CSS"],
-    "Frameworks & Libraries": ["Spring Boot", "Spring WebFlux", "React", "Node.js", "Express.js", "Redux.js", "FastAPI"],
-    "Databases & Caching":   ["MongoDB", "MySQL", "Redis", "Elasticsearch", "Atlas Search"],
-    "Architecture & Concepts": ["Microservices", "RESTful APIs", "System Design", "OOPS", "DBMS", "GraphQL", "Reactive Programming"],
-    "Developer Tools":        ["Git", "IntelliJ", "VS Code", "GitHub Copilot", "Eclipse", "Cursor", "Windsurf"]
+    "Languages": [
+      "Java",
+      "Python",
+      "C/C++",
+      "SQL",
+      "JavaScript",
+      "HTML/CSS"
+    ],
+    "Frameworks & Libraries": [
+      "Spring Boot",
+      "Spring WebFlux",
+      "React",
+      "Node.js",
+      "Express.js",
+      "Redux.js",
+      "FastAPI"
+    ],
+    "Databases & Caching": [
+      "MongoDB",
+      "MySQL",
+      "Redis",
+      "Elasticsearch",
+      "Atlas Search"
+    ],
+    "Architecture & Concepts": [
+      "Microservices",
+      "RESTful APIs",
+      "System Design",
+      "OOPS",
+      "DBMS",
+      "GraphQL",
+      "Reactive Programming"
+    ],
+    "Developer Tools": [
+      "Git",
+      "IntelliJ",
+      "VS Code",
+      "GitHub Copilot",
+      "Eclipse",
+      "Cursor",
+      "Windsurf"
+    ]
   },
   "achievements": [
     "Solved <strong>1500+</strong> problems across LeetCode, GeeksForGeeks, and CodeStudio (2021–2024)",
